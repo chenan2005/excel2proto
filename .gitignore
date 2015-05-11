@@ -11,4 +11,4 @@ Desktop.ini
 dist
 build
 
-bin
+*.exe
