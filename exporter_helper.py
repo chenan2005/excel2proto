@@ -18,13 +18,16 @@ def GetWord(input, _idx, split_char) :
 				_depth += 1
 			elif x[_end] == '}' :
 				_depth -= 1
-			if _depth == 0 :				
+			if _depth == 0 :
 				_idx = _idx + _end
 				while _idx < len(input) :
+				  #print _start, _end, _idx
 					if input[_idx] == split_char :
 						_idx += 1
 						return x[_start:_end],_idx
 					_idx += 1
+				#print _start, _end, _idx
+				return x[_start:_end],_idx
 			_end += 1	
 			
 	while _end < len(x) :
@@ -110,3 +113,4 @@ def JoinPath(dirname, filename) :
                 return dirname + filename
         else:
                 return dirname + "/" + filename
+                
